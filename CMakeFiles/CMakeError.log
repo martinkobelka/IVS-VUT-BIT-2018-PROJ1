@@ -1,0 +1,35 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/martin/Plocha/IVS-VUT-BIT-2018-PROJ1/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_20980/fast"
+/usr/bin/make -f CMakeFiles/cmTC_20980.dir/build.make CMakeFiles/cmTC_20980.dir/build
+make[1]: Entering directory '/home/martin/Plocha/IVS-VUT-BIT-2018-PROJ1/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_20980.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -g -O0 -fprofile-arcs -ftest-coverage    -o CMakeFiles/cmTC_20980.dir/CheckSymbolExists.c.o   -c /home/martin/Plocha/IVS-VUT-BIT-2018-PROJ1/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_20980
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_20980.dir/link.txt --verbose=1
+/usr/bin/cc   -g -O0 -fprofile-arcs -ftest-coverage     CMakeFiles/cmTC_20980.dir/CheckSymbolExists.c.o  -o cmTC_20980 -rdynamic 
+CMakeFiles/cmTC_20980.dir/CheckSymbolExists.c.o: In function `main':
+/home/martin/Plocha/IVS-VUT-BIT-2018-PROJ1/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8: undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_20980.dir/build.make:97: recipe for target 'cmTC_20980' failed
+make[1]: *** [cmTC_20980] Error 1
+make[1]: Leaving directory '/home/martin/Plocha/IVS-VUT-BIT-2018-PROJ1/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_20980/fast' failed
+make: *** [cmTC_20980/fast] Error 2
+
+File /home/martin/Plocha/IVS-VUT-BIT-2018-PROJ1/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
