@@ -699,7 +699,7 @@ namespace BlackBoxTesty {
         std::vector<Node_t *> LeafNodes;
         tree.GetLeafNodes(LeafNodes);
         
-        int way_lengts = 1;
+        int way_lengts = 0;
         bool first_way = true;
         
         for (Node_t  * node : LeafNodes) {
@@ -715,7 +715,7 @@ namespace BlackBoxTesty {
                 
             }
             else {
-                int actual_way = 1;
+                int actual_way = 0;
                 
                 while(node != nullptr) {
                     if(node->color == BinaryTree::BLACK) {
